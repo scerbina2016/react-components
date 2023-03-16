@@ -1,0 +1,39 @@
+.cardListMain {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    border: 2px solid black;
+   margin-top: 2px;
+   height: 35vw;
+
+
+
+
+
+
+
+   
+}
+.cardFirstImg{
+    width: 20vw;
+    height: 20vw;
+    background-position:left center;
+    background-size:contain;
+    background-repeat: no-repeat;
+}
+
+.card{
+    display: inline-block;
+    width: 20vw;
+   
+}
+.cardTitle{
+    font-size: 2vw;
+}
+.cardPrise{
+
+    font-size: 2vw; 
+    border: 1px solid blue;
+    text-align: center;
+}

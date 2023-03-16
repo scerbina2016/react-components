@@ -1,0 +1,7 @@
+.cardList{
+    display: flex;
+    flex-direction: row;
+    flex-flow: wrap;
+    width: 95vw;
+    justify-content:space-around;
+}
