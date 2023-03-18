@@ -13,3 +13,9 @@ export interface ICard {
     images?: string[];
 
 }
+
+export interface ITodo {
+    id?: number;
+    title?: string;
+    completed: boolean;
+}

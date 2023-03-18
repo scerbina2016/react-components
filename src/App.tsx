@@ -1,38 +1,27 @@
-import React,{useEffect, useState} from 'react';
-import Card from './components/Card';
-import CardList from './components/CardList';
-import { ICard } from './types/types';
-//import axios from 'axios';
-import { base } from './base/baseItem';
+import React from 'react';
+import About from './components/About';
+import Layout from './components/Layout';
+import NotFound from './components/NotFound';
+import {Route, createBrowserRouter, createRoutesFromElements, RouterProvider} from 'react-router-dom'
+import Main from './components/Main';
+import './App.css';
 
+const router = createBrowserRouter(
+  createRoutesFromElements(
+    <React.Fragment>
+      <Route path="/" element={<Layout />}>
+        <Route index element={<Main />} />
+        <Route path="main" element={<Main />} />
+        <Route path="about" element={<About />} />
+        <Route path="*" element={<NotFound />} />
+      </Route>
+    </React.Fragment>
+  )
+);
 
 const App = () => {
-
-  const [cards, setCards] = useState<ICard[]>([]);
-
-  useEffect(() => {
-    setCards(base);
-  },[])
-
-  /*async function fetchUsers() {
-    try {
-      const response = await axios.get<ICard[]>('https://dummyjson.com/products/?limit=100');
-        setCards(response.data);
-      console.log(cards);
-    } catch (e) {
-      alert(e);
-    }}*/
   
-  return (
-    <div >
-      <Card onClick={()=>console.log('Click')} width='90vw' height='10vh'>
-        <button onClick={()=> console.log('button click')}>Button</button>
-        <div>Div in card</div>
-      </Card>
-     <CardList cards={cards}/>
-
-    </div>
-  );
+    return <RouterProvider router={router} />;
 }
 
 export default App;
